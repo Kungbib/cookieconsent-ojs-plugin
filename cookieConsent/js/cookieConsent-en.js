@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
               {
                 title: "Analytical cookies",
                 description:
-                  "Cookies that provide us with information about how the website is used, so that we can maintain and improve user experience.",
+                  "Cookies that provide us with information about how the website is used, so that we can maintain and improve the user experience.",
                 linkedCategory: "analytics"
               },
               // Sektionen i botten för ytterligare allmän information
