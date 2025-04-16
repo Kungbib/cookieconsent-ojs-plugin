@@ -52,4 +52,34 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // Terribly fragile and ugly hack but the alternative is even worse
+  const ojsFooter = document.querySelector('div.pkp_footer_content');
+  if (ojsFooter) {
+    const newLink = document.createElement('a');
+    newLink.href = "#";
+    newLink.setAttribute('data-cc', 'show-preferencesModal');
+    newLink.setAttribute('aria-haspopup', 'dialog');
+    newLink.textContent = 'Hantera kakor';
+
+    const paragraphs = ojsFooter.querySelectorAll('p');
+
+    if (ojsFooter.textContent.includes('Värdplattform')) {
+      for (const paragraph of paragraphs) {
+        if (paragraph.textContent.includes('Värdplattform')) {
+          paragraph.appendChild(document.createTextNode(' | '));
+          paragraph.appendChild(newLink);
+          break;
+        }
+      }
+    } else {
+      for (const paragraph of paragraphs) {
+        if (paragraph.textContent.includes('Om cookies')) {
+          paragraph.appendChild(document.createElement('br'));
+          paragraph.appendChild(newLink);
+          break;
+        }
+      }
+    }
+  }
 });
