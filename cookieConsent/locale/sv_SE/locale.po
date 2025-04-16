@@ -1,0 +1,5 @@
+msgid "plugins.generic.cookieConsent.displayName"
+msgstr "Cookie-samtyckesplugin"
+
+msgid "plugins.generic.cookieConsent.description"
+msgstr "Visar dialogruta för cookie-samtycke."

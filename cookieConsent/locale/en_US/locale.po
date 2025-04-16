@@ -1,0 +1,5 @@
+msgid "plugins.generic.cookieConsent.displayName"
+msgstr "Cookie Consent Plugin"
+
+msgid "plugins.generic.cookieConsent.description"
+msgstr "Turns on a site-wide cookie consent dialog."
