@@ -25,26 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
             sections: [
               // Toppsektion med allmän information
               {
-                title: "TRANSLATEME Om användning av kakor",
-                description: "Den här tjänsten använder kakor (cookies). En kaka är en liten textfil som lagras i besökarens dator. KB:s tjänster är designade för att minska risken för spridning av dina uppgifter. Informationen som lagras via kakor kan aldrig användas av tredje part i marknadsföringssyfte."
+                title: "About the use of cookies",
+                description: "This service uses cookies. A cookie is a small text file stored in the visitor's computer. KB's services are designed to minimize the risk of spreading your data. The information stored via cookies can never be used by third parties for marketing purposes."
               },
               // Sektionen för nödvändiga kakor
               {
-                title: "Nödvändiga kakor",
-                description: "Dessa kakor krävs för att tjänsten ska vara säker och fungera som den ska. Därför går de inte att inaktivera.",
+                title: "Essential cookies",
+                description: "These cookies are required for the service to be secure and function as intended. Therefore they cannot be disabled.",
                 linkedCategory: "necessary", // här länkar vi samman beskrivningen med respektive kategori
               },
               // Sektionen för analytiska kakor
               {
-                title: "Analytiska kakor",
+                title: "Analytical cookies",
                 description:
-                  "Kakor som ger oss information om hur webbplatsen används som gör att vi kan underhålla, driva och förbättra användarupplevelsen.",
+                  "Cookies that provide us with information about how the website is used, so that we can maintain and improve user experience.",
                 linkedCategory: "analytics"
               },
               // Sektionen i botten för ytterligare allmän information
               {
-                title: "Mer information",
-                description: "Du kan alltid ändra dina val genom att klicka på “Hantera cookies” längst ner på sidan i sidfoten."
+                title: "More information",
+                description: "You can always change your choices by clicking on ”Manage cookies” in the footer at the bottom of the page."
               }
             ]
           }
