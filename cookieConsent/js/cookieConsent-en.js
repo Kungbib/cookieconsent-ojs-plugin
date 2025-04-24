@@ -32,14 +32,64 @@ document.addEventListener('DOMContentLoaded', function() {
               {
                 title: "Essential cookies",
                 description: "These cookies are required for the service to be secure and function as intended. Therefore they cannot be disabled.",
-                linkedCategory: "necessary", // här länkar vi samman beskrivningen med respektive kategori
+                linkedCategory: "necessary",
+                cookieTable: {
+                  title: "List of cookies",
+                  headers: {
+                    name: "Namn",
+                    description: "Description",
+                    duration: "Duration"
+                  },
+                  body: [
+                    {
+                      name: "cc_cookie",
+                      description: "Used to save your cookie settings.",
+                      duration: "6 months"
+                    },
+                    {
+                      name: "OJSSID",
+                      description: "Makes it possible to log in to Publicera.",
+                      duration: "Session"
+                    }
+                  ]
+                }
               },
               // Sektionen för analytiska kakor
               {
                 title: "Analytical cookies",
                 description:
                   "Cookies that provide us with information about how the website is used, so that we can maintain and improve the user experience.",
-                linkedCategory: "analytics"
+                linkedCategory: "analytics",
+                cookieTable: {
+                  title: "List of cookies",
+                  headers: {
+                    name: "Name",
+                    description: "Description",
+                    duration: "Duration"
+                  },
+                  body: [
+                    {
+                      name: "_pk_id",
+                      description: "Used to remember you through a unique and randomly generated ID.",
+                      duration: "13 months"
+                    },
+                    {
+                      name: "_pk_ses",
+                      description: "Used for storing temporary data about your visit.",
+                      duration: "30 minutes"
+                    },
+                    {
+                      name: "mtm_consent",
+                      description: "Used to store consent to analytical cookies.",
+                      duration: "400 days"
+                    },
+                    {
+                      name: "mtm_consent_removed",
+                      description: "Used to store declined consent to analytical cookies.",
+                      duration: "400 days"
+                    }
+                  ]
+                }
               },
               // Sektionen i botten för ytterligare allmän information
               {
@@ -49,6 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
           }
         }
+      }
+    },
+    onConsent: ({ cookie }) => {
+      if (cookie.categories.includes('analytics')) {
+        window._paq = window._paq || [];
+        window._paq.push(['rememberConsentGiven']);
+      }
+    },
+    onChange: ({ cookie }) => {
+      if (cookie.categories.includes('analytics')) {
+        window._paq = window._paq || [];
+        window._paq.push(['rememberConsentGiven']);
+      } else {
+        window._paq.push(['forgetConsentGiven']);
       }
     }
   });
